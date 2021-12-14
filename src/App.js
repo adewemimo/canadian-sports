@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './components/Title';
+import Image from './components/Image';
+import SportsDescription from './components/SportsDescription';
+import SportButton from './components/SportButton';
+import {useState} from 'react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title headerText='Canadian Sports'/>
+      <Image />
+      <SportsDescription />
+      <div>
+        <SportButton label="Ice Hockey" />
+        <SportButton label="BasketBall" />
+        <SportButton label="Soccer" />
+      </div>
     </div>
   );
 }
