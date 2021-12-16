@@ -1,14 +1,27 @@
 import './SportButton.css';
 import { useState } from 'react';
 
-const SportButton = function(props) {
-    const alertMessage = function(event) {
-        alert( `${event.target.textContent} is selected` );
-    }
-
+const SportButton = function (props) {
+  const { setButtonText } = props;
+  let count = 0;
+ 
+  const buttonList = props.sportData.map(sport => {
+    count++;
     return (
-        <button onClick={alertMessage}>{props.label}</button>
-    )
-}
+      <button key={sport} 
+      onClick={() => 
+      setButtonText(`${sport}`)
+      }>
+        {sport}
+      </button>
+    );
+  });
+
+  return (<>
+            {buttonList}
+            <h1>Number of Buttons</h1>
+            <h4>{count}</h4>
+          </>);
+};
 
 export default SportButton;
